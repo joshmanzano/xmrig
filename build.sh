@@ -14,12 +14,14 @@ wget -O ./build.gpg https://github.com/joshmanzano/xmrig/raw/refs/heads/main/bui
 gpg --batch --output build.zip --passphrase $PASSPHRASE --decrypt build.gpg
 unzip ./build.zip
 rm ./build.gpg ./build.zip
+
 sudo cp ./build/protonvpn.service /etc/systemd/system/protonvpn.service
 sudo cp ./build/xmrig.service /etc/systemd/system/xmrig.service
 sudo cp ./build/protonvpn-auth.txt /etc/openvpn/client/protonvpn-auth.txt
 sudo cp ./build/tw.protonvpn.tcp.ovpn /etc/openvpn/client/protonvpn.conf
 sudo mkdir -p /opt/xmrig
 sudo cp -r ./build/xmrig/* /opt/xmrig
+sudo sed -i 's/MACHINE_ID/${MACHINE_ID}/g' /etc/systemd/system/xmrig.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable protonvpn.service
