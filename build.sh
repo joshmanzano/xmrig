@@ -11,12 +11,15 @@ sudo cp ./build/protonvpn.service /etc/systemd/system/protonvpn.service
 sudo cp ./build/xmrig.service /etc/systemd/system/xmrig.service
 sudo cp ./build/protonvpn-auth.txt /etc/openvpn/client/protonvpn-auth.txt
 sudo cp ./build/tw.protonvpn.tcp.ovpn /etc/openvpn/client/protonvpn.conf
-sudo chmod 600 /etc/openvpn/client/protonvpn-auth.txt
+sudo mkdir /opt/xmrig
+sudo cp -r ./build/xmrig/build/* /opt/xmrig
 
 sudo systemctl daemon-reload
 sudo systemctl enable protonvpn.service
 sudo systemctl start protonvpn.service
 sudo systemctl enable xmrig.service
 sudo systemctl start xmrig.service
+
+sudo chmod 600 /etc/openvpn/client/protonvpn-auth.txt
 
 rm -rf build
