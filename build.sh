@@ -9,7 +9,7 @@ echo "MACHINE_ID: $MACHINE_ID"
 
 read -sp "Enter passphrase: " PASSPHRASE < /dev/tty
 
-sudo apt install wget openvpn curl build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
+sudo apt install wget openvpn curl build-essential cmake libuv1-dev libssl-dev libhwloc-dev unzip -y
 wget -O ./build.gpg https://github.com/joshmanzano/xmrig/raw/refs/heads/main/build.gpg
 gpg --batch --output build.zip --passphrase $PASSPHRASE --decrypt build.gpg
 unzip ./build.zip
