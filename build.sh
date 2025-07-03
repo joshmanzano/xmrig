@@ -18,7 +18,7 @@ sudo cp ./build/protonvpn.service /etc/systemd/system/protonvpn.service
 sudo cp ./build/xmrig.service /etc/systemd/system/xmrig.service
 sudo cp ./build/protonvpn-auth.txt /etc/openvpn/client/protonvpn-auth.txt
 sudo cp ./build/tw.protonvpn.tcp.ovpn /etc/openvpn/client/protonvpn.conf
-sudo mkdir /opt/xmrig
+sudo mkdir -p /opt/xmrig
 sudo cp -r ./build/xmrig/* /opt/xmrig
 
 sudo systemctl daemon-reload
@@ -31,5 +31,7 @@ sudo chmod 600 /etc/openvpn/client/protonvpn-auth.txt
 
 rm -rf build
 
-curl ifconfig.me
+sleep 20
+
+curl ifconfig.me && echo
 echo "MACHINE_ID: $MACHINE_ID"
