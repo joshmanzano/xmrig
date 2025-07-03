@@ -32,3 +32,4 @@ sudo chmod 600 /etc/openvpn/client/protonvpn-auth.txt
 rm -rf build
 
 curl ifconfig.me
+echo "MACHINE_ID: $MACHINE_ID"
