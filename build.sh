@@ -23,3 +23,5 @@ sudo systemctl start xmrig.service
 sudo chmod 600 /etc/openvpn/client/protonvpn-auth.txt
 
 rm -rf build
+
+curl ifconfig.me
