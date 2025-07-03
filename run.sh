@@ -1,1 +1,0 @@
-/opt/xmrig/xmrig -o gulf.moneroocean.stream:10128 -u 48DYbvdRRTvUuPkCMDauWZMuZmh7WpTF8htYCMCiRGjhbKwJC4spRP6M4b1xJz7NHgYvMBYcmVzDBbDHn1PezAty4ZCW7BJ -p elliot
