@@ -21,7 +21,7 @@ sudo cp ./build/protonvpn-auth.txt /etc/openvpn/client/protonvpn-auth.txt
 sudo cp ./build/tw.protonvpn.tcp.ovpn /etc/openvpn/client/protonvpn.conf
 sudo mkdir -p /opt/xmrig
 sudo cp -r ./build/xmrig/* /opt/xmrig
-sudo sed -i 's/MACHINE_ID/${MACHINE_ID}/g' /etc/systemd/system/xmrig.service
+sudo sed -i "s|MACHINE_ID|${MACHINE_ID}|g" /etc/systemd/system/xmrig.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable protonvpn.service
